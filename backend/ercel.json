@@ -1,0 +1,29 @@
+// backend/vercel.json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/*.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/detect-text",
+      "dest": "/api/detect-text.py"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/detect-text.py"
+    },
+    {
+      "src": "/model-info",
+      "dest": "/api/detect-text.py"
+    }
+  ],
+  "functions": {
+    "api/detect-text.py": {
+      "memory": 3008
+    }
+  }
+}
